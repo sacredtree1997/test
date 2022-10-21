@@ -1,0 +1,672 @@
+@charset "UTF-8";
+/* top-page
+背景画像 */
+body{
+    background-color: #666666;
+}
+img{
+  max-width: 100%;
+}
+.topimg{
+    max-width: 100%;
+    max-height: 100vh;
+}
+.big-bg{
+    text-align: center;
+    width:100vw;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.center{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+
+/* ホーム目次 */
+.home-idx{
+    width: 75%;
+    max-width: 650px;
+    max-height: 100vw;
+    justify-content: center;
+    border-radius: 5px;
+    
+}
+.home-idx a{
+    text-decoration: none;
+    color: lightcyan;
+
+}
+.home-idx a .idx-abt{
+    transition: 0.5s;
+}
+.home-idx a:hover .idx-abt{
+    background-color:darkgray;
+    transition: 1s;
+}
+.idx-abt{
+    background-color: grey;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:5%;
+    margin: 5%;
+    border-radius: 10px;
+}
+
+.idx-icon{
+    width: 40%;
+}
+.icon-hover{
+  transition: 0.5s;
+}
+.icon-hoverh{
+  transition: 0.5s;
+}
+.icon-hover:hover{
+  filter: brightness(150%);
+  transition: 1s;
+}
+.icon-hoverh:hover{
+  filter: brightness(115%);
+  transition: 1s;
+}
+
+.idx-text{
+    width: 50%;
+    
+}
+.idx-text h2{
+    border-bottom: 3px solid #0bd;
+    padding-bottom: 5px;
+}
+ /* ここから下がハンバーガーメニューに関するCSS */
+    
+  /* チェックボックスを非表示にする */
+  .drawer_hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+  }
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 8px;
+  }
+  
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+    
+  /* メニューのデザイン*/
+  .nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: rgb(218, 219, 220);
+    transition: .5s;
+  }
+  
+  /* メニュー黒ポチを消す */
+  .nav_list {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .nav_list a{
+    text-decoration: none;
+    color:rgb(83, 83, 255);
+  }
+  .nav_list a:hover{
+    color: aqua;
+  }
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+    left: 60%;/* メニューを画面に入れる */
+  }
+
+  .nav-icon{
+    width: 15vw;
+    margin: 10px;
+    max-width: 150px;
+  }
+
+
+/* ps */
+
+#header-ps{
+  background-image: url(image/top.ps.jpg);
+  background-size: auto 450px;
+  background-position: center top;
+}
+.main-ps{
+  max-width: 1200px;
+  padding: 1%;
+  margin: 3%;
+  background-color:rgb(51, 51, 109);
+  border-radius: 10px;
+  text-align: center;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.grid{
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+.item{
+  background-color:rgb(41, 197, 197);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.big-box{
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+}
+.big-box img{
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.big-box2{
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+.big-box2 img{
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+}
+.long {
+  height:160px;
+}
+
+/* ポップアップウインドウの設定 */
+.pu {
+  background-color: #efefef;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 80%;
+  overflow-y: scroll;
+}
+/* チェックボックスの初期設定 */
+#pu-on1{
+  display: none;
+}
+ #pu-on2{
+  display: none;
+}
+ #pu-on3{
+  display: none;
+}
+ #pu-on4{
+  display: none;
+}
+ #pu-on5{
+  display: none;
+}
+ #pu-on6{
+  display: none;
+}
+ #pu-on7{
+  display: none;
+}
+ #pu-on8{
+  display: none;
+}
+ #pu-on9{
+  display: none;
+}
+ #pu-on10{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#pu-on1:checked + .pu{
+  display: block;
+}
+ #pu-on2:checked + .pu{
+  display: block;
+}
+ #pu-on3:checked + .pu{
+  display: block;
+}
+ #pu-on4:checked + .pu{
+  display: block;
+}
+ #pu-on5:checked + .pu{
+  display: block;
+}
+#pu-on6:checked + .pu{
+  display: block;
+}
+ #pu-on7:checked + .pu{
+  display: block;
+}
+ #pu-on8:checked + .pu{
+  display: block;
+}
+ #pu-on9:checked + .pu{
+  display: block;
+}
+ #pu-on10:checked + .pu{
+  display: block;
+}
+
+/* 閉じるアイコン（右上） */
+.icon-close{
+  background: #000;
+  color: #fff;
+  font-size: 30px;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+}
+
+/* 開くボタン */
+.btn-open{
+  background: #fff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 95%;
+  text-align: center;
+  transition: 1s;
+}
+.btn-open:hover{
+  filter: brightness(110%);
+  transition: 1s;
+}
+
+/* ポップアップの内容 */
+.pu-content{
+  margin: 40px auto 40px auto;
+  width: 90%;
+}
+
+@media (max-width: 1050px){
+  
+  .big-box2{
+          grid-column: auto;
+          grid-row: auto;
+  }
+  .big-box2 img{
+          height: auto;
+      }
+  
+}
+@media (max-width:850px) {
+  .big-box{
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .big-box img{
+    height: auto;
+  }
+  .grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .pu{
+    width:70%;
+    height:60%;
+  }
+}
+
+@media (max-width: 549px){
+/* MENU配置 */
+
+.grid{
+  grid-template-columns: 1fr;
+}
+.big-box{
+  grid-column: auto;
+  grid-row: auto;
+}
+.big-box img{
+  height: auto;
+}
+.long{
+  height:auto;
+}
+}
+
+/* ai */
+#header-ai{
+  background-image: url(image/top.ai.jpg);
+  background-size: auto 450px;
+  background-position: center top;
+}
+.main-ai{
+  background-color: rgb(136, 84, 47);
+  width: 85%;
+  max-width: 1000px;
+  padding:15px 0px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+.contents-ai{
+  width: 90%;
+  background-color:rgb(251, 100, 45);
+  border-radius: 5px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 3%;
+  margin: 5%;
+}
+.contents-ai2{
+  width: 90%;
+  background-color:rgb(251, 100, 45);
+  border-radius: 5px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 3%;
+}
+.item-ai{
+  width:50%;
+}
+.text-ai{
+  width: 45%;
+  height:100%;
+  background-color:rgb(255, 131, 85);
+  border-radius: 5px;
+}
+.theme-ai{
+  font-size: 2rem;
+  font-size: clamp(1.4rem,2vw,2rem);
+}
+
+/* チェックボックスの初期設定 */
+#pu-on01{
+  display: none;
+}
+ #pu-on02{
+  display: none;
+}
+ #pu-on03{
+  display: none;
+}
+ #pu-on04{
+  display: none;
+}
+ #pu-on05{
+  display: none;
+}
+ #pu-on06{
+  display: none;
+}
+ #pu-on07{
+  display: none;
+}
+ #pu-on08{
+  display: none;
+}
+ #pu-on09{
+  display: none;
+}
+ #pu-on010{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#pu-on01:checked + .pu{
+  display: block;
+}
+ #pu-on02:checked + .pu{
+  display: block;
+}
+ #pu-on03:checked + .pu{
+  display: block;
+}
+ #pu-on04:checked + .pu{
+  display: block;
+}
+ #pu-on05:checked + .pu{
+  display: block;
+}
+#pu-on06:checked + .pu{
+  display: block;
+}
+ #pu-on07:checked + .pu{
+  display: block;
+}
+ #pu-on08:checked + .pu{
+  display: block;
+}
+ #pu-on09:checked + .pu{
+  display: block;
+}
+ #pu-on010:checked + .pu{
+  display: block;
+}
+
+@media(max-width: 800px){
+  .contents-ai{
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+  }
+  .contents-ai2{
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0px;
+  }
+  .item-ai{
+    width:100%;
+    margin-top: 15px;
+  }
+  .text-ai{
+    width: 100%;
+  } 
+}
+
+/* 動画ページ */
+
+html {
+  font-size: 100%;
+}
+body{
+  line-height: 1.7;
+}
+a{
+  text-decoration: none;
+}
+
+.view-width {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.header {
+    margin-bottom: 20px;
+    height:300px;
+  }
+
+#header-pr{
+    background-image: url(image/top.pr.jpg);
+    background-size: auto 450px;
+    background-position: center top;
+}
+.header-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home-icon{
+    height:100px;
+    padding: 20px;
+}
+.home-list{
+  font-size: 1rem;
+}
+  
+ 
+
+  /* レイアウト */
+
+  .home-style{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .home-main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 67%;
+    background:#383560;
+    padding: 2%;
+    border-radius: 5px;
+    /* min-width: 400px; */
+  }
+  .main-1{
+    background: #8f5e8d;
+    border-radius: 5px;
+  }
+  .main-2{
+    background: #8f5e8d;
+    margin-top: 5%;
+    border-radius: 5px;
+  }
+  .home-article:hover{
+    background-color: cadetblue;
+
+  }
+  .article-grid{
+    display: grid;
+    width: 100%;
+    padding: 5%;
+  }
+  .home-article{
+    background: mediumturquoise;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .home-aside{
+    width: 30%;
+    background: cadetblue;
+  }
+  footer{
+    background:#333;
+    text-align: center;
+    padding: 26px 0;
+    margin-top: 20px;
+}
+
+
+.post-info{
+  position: relative;
+  padding-top: 4px;
+  margin-bottom: 40px;
+}
+.post-date{
+  background: #0bd;
+  border-radius: 50%;
+  color: #fff;
+  width: 60px;
+  height:60px;
+  font-size: 1rem;
+  text-align:center;
+  position: absolute;
+  top: 0;
+  /* padding-top: 10px; */
+}
+.post-date span{
+  font-size: 1rem;
+  border-top: 1px rgba(255,255,255,.5) solid;
+  /* padding-top:6px; */
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.post-title,
+.post-cat{
+    margin-left: 75px;
+}
+
+  @media(max-width:600px){
+    .home-main{
+      width: 100%;
+    }
+    .home-aside{
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
